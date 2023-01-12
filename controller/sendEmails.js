@@ -24,11 +24,11 @@ import sgMail from "@sendgrid/mail";
 //   res.json(info);
 // });
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export const sendEmail = asyncWrapper(async (req, res, next) => {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: "andy.katov@icloud.com",
-    from: "andy.katov@blingoose.net",
+    to: "andykatov@gmail.com",
+    from: "andy.katov@icloud.com",
     subject: "This is a test",
     text: "Can you see this message?",
     html: "<strong>and easy to do anywhere, even with Node.js</strong>",
